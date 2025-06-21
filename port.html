@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinmayanand's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #1f4037 0%, #99f2c8 100%);
+      color: #fff;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 30px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #e0ffe7;
+    }
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    nav a:hover, nav a.active {
+      color: #99f2c8;
+    }
+    nav a.active::after, nav a:hover::after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 60%;
+      border-bottom: 2px solid #99f2c8;
+      margin-top: 2px;
+    }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s, transform 0.8s;
+      background: rgba(0,0,0,0.18);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      font-size: 2rem;
+      border-bottom: 2px solid #99f2c8;
+      margin-bottom: 20px;
+      color: #99f2c8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: rgba(0,0,0,0.35);
+      padding: 24px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      background: rgba(34, 193, 195, 0.18);
+    }
+    .card .fa-solid, .card .fa-brands {
+      font-size: 2rem;
+      color: #99f2c8;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      margin-bottom: 8px;
+      color: #99f2c8;
+    }
+    .card p {
+      color: #e0ffe7;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 1.1rem;
+    }
+    .contact-info a {
+      color: #99f2c8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-info a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .socials {
+      margin-top: 10px;
+    }
+    .socials a {
+      margin: 0 12px;
+      color: #99f2c8;
+      text-decoration: none;
+      font-size: 1.7rem;
+      transition: color 0.2s;
+      vertical-align: middle;
+    }
+    .socials a:hover {
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      font-size: 0.95rem;
+      color: #99f2c8;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+    #images img {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav {
+        gap: 18px;
+        font-size: 0.95rem;
+      }
+      section {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jaybhay Chinmayanand</h1>
+    <p>💻 Computer Engineering Student | 📍 Pune | 🚀 Future Cyber Expert</p>
+  </header>
+
+  <nav>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#images" class="nav-link">Gallery</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title"><i class="fa-solid fa-user"></i> About Me</h2>
+    <p>Hello! I'm Chinmayanand, a passionate Computer Engineering student at JSPM College, Pune. I enjoy solving problems with code, learning cybersecurity, and building projects that make life easier. My goal is to become a cybersecurity expert and help protect digital identities. 🛡️</p>
+    <p>I have hands-on experience with:</p>
+    <ul style="margin-top: 10px; margin-left: 20px;">
+      <li>🔧 Programming Languages: C, Python, Java</li>
+      <li>🛠️ Tools & Tech: Git, SQL, Linux</li>
+      <li>🌐 Web Development: HTML, CSS, JavaScript</li>
+      <li>🔐 Cybersecurity Enthusiast: Practicing basic ethical hacking and system hardening</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <i class="fa-solid fa-money-check-dollar"></i>
+        <h3>Python ATM Machine</h3>
+        <p>A command-line ATM simulation with authentication and transaction logging.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Student DBMS</h3>
+        <p>Terminal-based app using C and SQL to manage student records efficiently.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Portfolio Website</h3>
+        <p>This responsive, modern HTML/CSS-based website you're seeing right now!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="images">
+    <h2 class="section-title"><i class="fa-solid fa-image"></i> Gallery</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+      <img src="https://via.placeholder.com/300x200.png?text=Profile+Photo" alt="Profile">
+      <img src="https://via.placeholder.com/300x200.png?text=Project+1" alt="Project 1">
+      <img src="https://via.placeholder.com/300x200.png?text=Workshop+Event" alt="Workshop">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title"><i class="fa-solid fa-phone"></i> Contact</h2>
+    <div class="contact-info">
+      <span><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:chinmayanandjaybhay@gmail.com">chinmayanandjaybhay@gmail.com</a></span>
+      <span><i class="fa-solid fa-phone"></i> Phone: <a href="tel:+917720821207">+91 7720821207</a></span>
+    </div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/chinmayanandjaybhay" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Chinmayanand Jaybhay. All rights reserved.
+  </footer>
+
+  <script>
+    // Section fade-in on scroll
+    function revealSections() {
+      const sections = document.querySelectorAll('section');
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('DOMContentLoaded', revealSections);
+
+    // Smooth nav highlight
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 80;
+      navLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
